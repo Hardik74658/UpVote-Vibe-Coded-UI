@@ -56,13 +56,13 @@ export default function Profile() {
       bio: editBio,
       avatar: editAvatar,
     });
-    onEditProfileOpenChange(false);
+    onEditProfileOpenChange();
   };
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
       {/* Profile Header */}
-      <Card className="mb-8 shadow-xl rounded-3xl border border-gray-200" radius="3xl">
+      <Card className="mb-8 shadow-xl rounded-3xl border border-gray-200" radius="lg">
         <CardBody className="gap-8 p-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <RouteLink to={`/profile/${user.id}`}>

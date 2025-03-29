@@ -91,9 +91,9 @@ export default function Navigation() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label="Notifications">
-              <DropdownItem>New reply to your thread</DropdownItem>
-              <DropdownItem>Your post was upvoted</DropdownItem>
-              <DropdownItem>New follower</DropdownItem>
+              <DropdownItem key="reply">New reply to your thread</DropdownItem>
+              <DropdownItem key="upvote">Your post was upvoted</DropdownItem>
+              <DropdownItem key="follower">New follower</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
@@ -114,8 +114,18 @@ export default function Navigation() {
                 <p className="font-semibold">Signed in as</p>
                 <p className="font-semibold">user@example.com</p>
               </DropdownItem>
-              <DropdownItem key="profile-link" as={RouteLink} to="/profile">Profile</DropdownItem>
-              <DropdownItem key="settings-link" as={RouteLink} to="/settings">Settings</DropdownItem>
+              <DropdownItem
+                key="profile-link"
+                onClick={() => window.location.href = "/profile"}
+              >
+                Profile
+              </DropdownItem>
+              <DropdownItem
+                key="settings-link"
+                onClick={() => window.location.href = "/settings"}
+              >
+                Settings
+              </DropdownItem>
               <DropdownItem key="logout" color="danger">Log Out</DropdownItem>
             </DropdownMenu>
           </Dropdown>

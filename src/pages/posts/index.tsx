@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { 
   Button, 
   Chip,
@@ -118,7 +118,7 @@ export default function Posts() {
     setCreateTitle("");
     setCreateContent("");
     setCreateImage("");
-    onCreateOpenChange(false);
+    onCreateOpenChange();
   };
 
   return (
@@ -132,7 +132,7 @@ export default function Posts() {
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  color={category.color}
+                  color={category.color as "primary" | "secondary" | "success" | "warning" | "danger"}
                   variant={selectedCategory === category.id ? "solid" : "light"}
                   className="justify-start transition-all duration-300"
                   onPress={() => {
@@ -176,7 +176,7 @@ export default function Posts() {
           {categories.map((category) => (
             <Chip
               key={category.id}
-              color={category.color}
+              color={category.color as "primary" | "secondary" | "success" | "warning" | "danger"}
               variant={selectedCategory === category.id ? "solid" : "bordered"}
               radius="full"
               className="cursor-pointer text-lg transition-all duration-300"

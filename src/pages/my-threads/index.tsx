@@ -1,6 +1,5 @@
 import React from "react";
 import { 
-  Card, 
   Button, 
   Modal, 
   ModalContent, 
@@ -8,7 +7,6 @@ import {
   ModalBody, 
   ModalFooter, 
   useDisclosure, 
-  Input 
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { PostCard } from "../../components/post/post-card";
@@ -92,7 +90,7 @@ export default function MyThreads() {
     setSelectedThread(thread);
     setEditTitle(thread.title);
     setEditContent(thread.content);
-    setEditImage(thread.image);
+    setEditImage(thread.image || "");
     onEditOpen();
   };
 
@@ -103,7 +101,7 @@ export default function MyThreads() {
           ? { ...thread, title: editTitle, content: editContent, image: editImage }
           : thread
       ));
-      onEditOpenChange(false);
+      onEditOpenChange();
     }
   };
 
@@ -125,7 +123,7 @@ export default function MyThreads() {
     setCreateTitle("");
     setCreateContent("");
     setCreateImage("");
-    onCreateOpenChange(false);
+    onCreateOpenChange();
   };
 
   // Trigger file input for edit image upload

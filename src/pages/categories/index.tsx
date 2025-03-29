@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { 
   Card, 
   CardBody, 
@@ -97,7 +97,7 @@ export default function Categories() {
             {/* Posts View */}
             <div className="flex items-center justify-between mb-6">
               <Button 
-                color="light" 
+                color="default" 
                 variant="flat"
                 radius="lg"
                 onPress={() => setSelectedCategory(null)}
@@ -117,8 +117,8 @@ export default function Categories() {
                   onChange={(e) => setSortBy(e.target.value)} // Fixed event type
                   className="w-32 rounded-md border border-gray-200 bg-white shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
                 >
-                  <SelectItem value="latest">Latest</SelectItem> // Fixed value type
-                  <SelectItem value="popular">Popular</SelectItem> // Fixed value type
+                  <SelectItem key="latest" textValue="latest">Latest</SelectItem>
+                  <SelectItem key="popular" textValue="popular">Popular</SelectItem>
                 </Select>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function Categories() {
                 <div key={category.id} className="relative transition-transform duration-300 hover:scale-105 hover:z-10">
                   <Card
                     className="border border-gray-100 rounded-3xl shadow-lg"
-                    radius="3xl"
+                    radius="lg"
                     isPressable
                     onPress={() => setSelectedCategory(category.id)}
                   >
@@ -175,8 +175,7 @@ export default function Categories() {
                         {category.threadCount} threads
                       </p>
                       <Chip
-                        color={category.color}
-                        variant={selectedCategory === category.id ? "solid" : "outlined"}
+                        variant={selectedCategory === category.id ? "solid" : "bordered"}
                         radius="full"
                       />
                     </CardBody>
@@ -195,7 +194,7 @@ export default function Categories() {
                     key={category.id}
                     color={index % 3 === 0 ? "warning" : index % 3 === 1 ? "success" : "danger"}
                     variant="solid"
-                    radius="full"
+                    radius="lg"
                     onPress={() => setSelectedCategory(category.id)}
                     className="min-w-fit transition-transform duration-300 hover:scale-105 text-sm"
                   >

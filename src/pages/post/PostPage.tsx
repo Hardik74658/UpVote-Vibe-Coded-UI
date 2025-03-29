@@ -57,7 +57,7 @@ export default function PostPage() {
     });
   };
 
-  const handleBookmark = (postId: string) => {
+  const handleBookmark = () => {
     if (!post) return;
     setPost({
       ...post,
@@ -69,7 +69,7 @@ export default function PostPage() {
     console.log(`Liked post`);
   };
 
-  const handleComment = (postId: string, comment: string) => {
+  const handleComment = (comment: string) => {
     if (!post) return;
     setPost({
       ...post,

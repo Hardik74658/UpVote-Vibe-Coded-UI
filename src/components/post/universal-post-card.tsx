@@ -74,8 +74,7 @@ export const UniversalPostCard: React.FC<UniversalPostCardProps> = ({
                 icon={post.isUpvoted ? "lucide:arrow-up-circle" : "lucide:arrow-up"} 
                 className="text-lg"
               />}
-              onPress={(e: React.MouseEvent) => { // Fixed event type
-                e.preventDefault();
+              onPress={() => {
                 onUpvote(post.id);
               }}
               className={post.isUpvoted ? "text-secondary" : "text-default-500"}
@@ -93,8 +92,7 @@ export const UniversalPostCard: React.FC<UniversalPostCardProps> = ({
               variant="light"
               size="sm"
               isIconOnly
-              onPress={(e: React.MouseEvent) => { // Fixed event type
-                e.preventDefault();
+              onPress={() => {
                 onBookmark(post.id);
               }}
             >

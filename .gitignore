@@ -37,3 +37,6 @@ Thumbs.db
 # Miscellaneous
 *.sublime-workspace
 *.sublime-project
+
+# Local Netlify folder
+.netlify

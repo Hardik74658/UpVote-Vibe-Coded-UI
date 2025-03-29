@@ -1,3 +1,4 @@
+// src/components/layout/navbar.tsx
 import React from "react";
 import { Link as RouteLink, useLocation } from "react-router-dom";
 import { 
@@ -24,7 +25,7 @@ export default function Navigation() {
   const location = useLocation();
   const notifications = 3; // Mock notifications count
 
-  // Check if the current route is auth (login/signup) so navbar bg is transparent
+  // Determine if current route is an auth page
   const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
 
   const menuItems = [
@@ -58,10 +59,7 @@ export default function Navigation() {
       {/* Desktop Menu Items */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {menuItems.map((item) => (
-          <NavbarItem 
-            key={item.path}
-            isActive={location.pathname === item.path}
-          >
+          <NavbarItem key={item.path} isActive={location.pathname === item.path}>
             <Link 
               as={RouteLink} 
               to={item.path}

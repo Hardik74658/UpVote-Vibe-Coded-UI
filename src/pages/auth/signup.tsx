@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, Input, Button, Link as NextUILink } from '@nextui-org/react';
+import { Card, CardBody, Input, Button } from '@nextui-org/react';
 import { Icon } from '@iconify/react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -9,10 +9,9 @@ export default function Signup() {
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert('Signed up with: ' + email);
-    // Redirect to login page after signup
     navigate('/login');
   };
 

@@ -22,7 +22,7 @@ export const UniversalPostCard: React.FC<UniversalPostCardProps> = ({
       as={Link}
       to={`/post/${post.id}`}
       className="border border-primary/20 overflow-hidden hover:shadow-lg transition-shadow"
-      radius="2xl"
+      radius="lg" // Fixed radius type
     >
       {/* Image with rounded top corners only */}
       <div className="relative w-full h-48">
@@ -74,7 +74,7 @@ export const UniversalPostCard: React.FC<UniversalPostCardProps> = ({
                 icon={post.isUpvoted ? "lucide:arrow-up-circle" : "lucide:arrow-up"} 
                 className="text-lg"
               />}
-              onPress={(e) => {
+              onPress={(e: React.MouseEvent) => { // Fixed event type
                 e.preventDefault();
                 onUpvote(post.id);
               }}
@@ -93,7 +93,7 @@ export const UniversalPostCard: React.FC<UniversalPostCardProps> = ({
               variant="light"
               size="sm"
               isIconOnly
-              onPress={(e) => {
+              onPress={(e: React.MouseEvent) => { // Fixed event type
                 e.preventDefault();
                 onBookmark(post.id);
               }}

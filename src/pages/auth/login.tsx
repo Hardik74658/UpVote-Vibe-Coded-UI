@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, Input, Button, Link as NextUILink } from '@nextui-org/react';
+import { Card, CardBody, Input, Button } from '@nextui-org/react';
 import { Icon } from '@iconify/react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,10 +8,9 @@ export default function Login() {
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert('Logged in with: ' + email);
-    // Redirect to home page after login
     navigate('/');
   };
 

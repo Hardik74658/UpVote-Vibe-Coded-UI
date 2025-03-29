@@ -11,8 +11,7 @@ import {
   ModalHeader, 
   ModalBody, 
   ModalFooter, 
-  useDisclosure,
-  Input 
+  useDisclosure
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { Link as RouteLink } from "react-router-dom";
@@ -116,7 +115,7 @@ export default function Profile() {
       </Card>
 
       {/* Profile Tabs */}
-      <Tabs aria-label="Profile sections" radius="3xl" color="primary" className="shadow-md  rounded-2xl">
+      <Tabs aria-label="Profile sections" radius="lg" color="primary" className="shadow-md  rounded-2xl">
         <Tab key="threads" title="My Threads">
           <div className="mt-6">
             <MyThreads />

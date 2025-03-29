@@ -11,8 +11,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  useDisclosure,
-  Input
+  useDisclosure
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { Post } from "../../types/forum";

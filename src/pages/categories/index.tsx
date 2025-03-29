@@ -114,11 +114,11 @@ export default function Categories() {
                 />
                 <Select 
                   value={sortBy}
-                  onChange={(value: string) => setSortBy(value)}
+                  onChange={(e) => setSortBy(e.target.value)} // Fixed event type
                   className="w-32 rounded-md border border-gray-200 bg-white shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
                 >
-                  <SelectItem value="latest">Latest</SelectItem>
-                  <SelectItem value="popular">Popular</SelectItem>
+                  <SelectItem value="latest">Latest</SelectItem> // Fixed value type
+                  <SelectItem value="popular">Popular</SelectItem> // Fixed value type
                 </Select>
               </div>
             </div>

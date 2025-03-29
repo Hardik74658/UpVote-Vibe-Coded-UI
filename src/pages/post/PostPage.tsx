@@ -65,8 +65,8 @@ export default function PostPage() {
     });
   };
 
-  const handleLike = (postId: string) => {
-    console.log(`Liked post ${postId} (UI only)`);
+  const handleLike = () => {
+    console.log(`Liked post`);
   };
 
   const handleComment = (postId: string, comment: string) => {

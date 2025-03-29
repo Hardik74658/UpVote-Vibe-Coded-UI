@@ -1,5 +1,4 @@
 // src/components/layout/sidebar.tsx
-import React from "react";
 import { Link as RouteLink, useLocation } from "react-router-dom";
 import { Button, Avatar } from "@heroui/react";
 import { Icon } from "@iconify/react";

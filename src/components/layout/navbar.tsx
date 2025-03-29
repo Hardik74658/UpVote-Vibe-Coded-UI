@@ -114,9 +114,9 @@ export default function Navigation() {
                 <p className="font-semibold">Signed in as</p>
                 <p className="font-semibold">user@example.com</p>
               </DropdownItem>
-              <DropdownItem as={RouteLink} to="/profile">Profile</DropdownItem>
-              <DropdownItem as={RouteLink} to="/settings">Settings</DropdownItem>
-              <DropdownItem color="danger">Log Out</DropdownItem>
+              <DropdownItem key="profile-link" as={RouteLink} to="/profile">Profile</DropdownItem>
+              <DropdownItem key="settings-link" as={RouteLink} to="/settings">Settings</DropdownItem>
+              <DropdownItem key="logout" color="danger">Log Out</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>

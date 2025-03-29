@@ -26,7 +26,6 @@ export default function Navigation() {
   const notifications = 3; // Mock notifications count
 
   // Determine if current route is an auth page
-  const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
 
   const menuItems = [
     { name: "Posts", path: "/" },
@@ -41,7 +40,7 @@ export default function Navigation() {
       isMenuOpen={isMenuOpen} 
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
-      className={`${isAuthPage ? "bg-transparent" : "bg-white"} shadow-md rounded-2xl mx-4 my-2`}
+      className="bg-white shadow-md rounded-2xl mx-4 my-2"
     >
       {/* Mobile Menu Toggle */}
       <NavbarContent className="sm:hidden" justify="start">

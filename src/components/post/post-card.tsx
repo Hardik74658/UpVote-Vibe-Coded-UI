@@ -59,7 +59,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onUpvote, onBookmark }
         isPressable
         as={Link}
         to={`/post/${post.id}`}
-        className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200"
+        className="bg-white rounded-xl overflow-hidden hover:shadow-xl transition-shadow "
         radius="lg"
       >
         {/* Image: rounded on top only */}

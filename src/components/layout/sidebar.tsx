@@ -1,3 +1,4 @@
+// src/components/layout/sidebar.tsx
 import React from "react";
 import { Link as RouteLink, useLocation } from "react-router-dom";
 import { Button, Avatar } from "@heroui/react";
@@ -16,14 +17,14 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="hidden lg:flex flex-col h-screen w-64 p-4 border-r border-primary/20 sticky top-0 bg-white shadow-lg rounded-2xl">
-      {/* Logo and Branding */}
+    <div className="hidden lg:flex flex-col w-64 p-4 border-r border-gray-200 fixed top-0 left-0 h-screen bg-white shadow-lg rounded-2xl">
+      {/* Branding */}
       <div className="flex items-center gap-3 p-4">
         <Icon icon="lucide:message-circle" className="text-2xl text-primary" />
-        <span className="font-bold text-lg font-mono">UpVote</span>
+        <span className="font-bold text-lg">UPVote</span>
       </div>
 
-      {/* Navigation Menu */}
+      {/* Main Navigation Items */}
       <div className="flex flex-col gap-2 flex-grow">
         {menuItems.slice(0, 3).map((item) => (
           <Button
@@ -32,7 +33,7 @@ export default function Sidebar() {
             to={item.path}
             variant={location.pathname === item.path ? "solid" : "light"}
             color="primary"
-            className="justify-start rounded-xl transition-transform duration-200 hover:scale-105"
+            className="justify-start rounded-xl transition-all duration-150 hover:scale-105"
             startContent={<Icon icon={item.icon} className="text-lg" />}
           >
             {item.name}
@@ -40,7 +41,7 @@ export default function Sidebar() {
         ))}
       </div>
 
-      {/* Profile Section (ALWAYS AT BOTTOM) */}
+      {/* Profile & Auth Items */}
       <div className="flex flex-col gap-2">
         {menuItems.slice(3).map((item) => (
           <Button
@@ -49,7 +50,7 @@ export default function Sidebar() {
             to={item.path}
             variant={location.pathname === item.path ? "solid" : "light"}
             color="primary"
-            className="justify-start rounded-xl transition-transform duration-200 hover:scale-105"
+            className="justify-start rounded-xl transition-all duration-150 hover:scale-105"
             startContent={<Icon icon={item.icon} className="text-lg" />}
           >
             {item.name}
@@ -57,13 +58,13 @@ export default function Sidebar() {
         ))}
 
         {/* Profile & Logout Section */}
-        <div className="flex items-center gap-3 p-4 border-t border-primary/20">
+        <div className="flex items-center gap-3 p-4 border-t border-gray-200">
           <Avatar src="https://i.pravatar.cc/150?u=user" size="sm" radius="lg" />
           <div className="flex-1">
             <p className="text-sm font-semibold">John Doe</p>
-            <p className="text-xs text-default-500">@johndoe</p>
+            <p className="text-xs text-gray-500">@johndoe</p>
           </div>
-          <Button isIconOnly variant="light" size="sm">
+          <Button isIconOnly variant="light" size="sm" className="rounded-xl">
             <Icon icon="lucide:log-out" className="text-lg" />
           </Button>
         </div>

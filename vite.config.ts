@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     allowedHosts: true,
   },
-  base: "/", // adjust if needed*
+  base: "./", // Adjusted for deployment
 });

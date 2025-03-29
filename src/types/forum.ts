@@ -33,14 +33,14 @@ export interface Category {
 export interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string; // Made optional
   avatar: string;
   bio: string;
   followers: number;
   following: number;
   totalUpvotes: number;
   threadsCreated: number;
-  socialLinks: {
+  socialLinks?: { // Made optional
     twitter?: string;
     github?: string;
     linkedin?: string;

@@ -81,11 +81,12 @@ export default function Navigation() {
                 <Icon icon="lucide:bell" className="text-xl" />
                 {notifications > 0 && (
                   <Badge 
-                    content={notifications} 
                     color="secondary"
                     size="sm"
                     className="absolute -top-1 -right-1"
-                  />
+                  >
+                    {notifications}
+                  </Badge>
                 )}
               </Button>
             </DropdownTrigger>
@@ -123,8 +124,8 @@ export default function Navigation() {
 
       {/* Mobile Menu Items */}
       <NavbarMenu>
-        {menuItems.map((item) => (
-          <NavbarMenuItem key={item.path}>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.path}-${index}`}>
             <Link
               as={RouteLink}
               to={item.path}

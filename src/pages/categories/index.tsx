@@ -115,7 +115,7 @@ export default function Categories() {
                 <Select 
                   value={sortBy}
                   onChange={(value: string) => setSortBy(value)}
-                  className="w-32 rounded-full border border-gray-200 bg-white shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
+                  className="w-32 rounded-md border border-gray-200 bg-white shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
                 >
                   <SelectItem value="latest">Latest</SelectItem>
                   <SelectItem value="popular">Popular</SelectItem>
@@ -174,6 +174,11 @@ export default function Categories() {
                       <p className="text-base text-green-600 font-semibold">
                         {category.threadCount} threads
                       </p>
+                      <Chip
+                        color={category.color}
+                        variant={selectedCategory === category.id ? "solid" : "outlined"}
+                        radius="full"
+                      />
                     </CardBody>
                   </Card>
                 </div>

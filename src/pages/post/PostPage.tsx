@@ -48,7 +48,7 @@ export default function PostPage() {
   }, [id]);
 
   // Handlers for UI-only simulation (local state updates)
-  const handleUpvote = (postId: string) => {
+  const handleUpvote = () => {
     if (!post) return;
     setPost({
       ...post,

@@ -59,8 +59,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onUpvote, onBookmark }
         isPressable
         as={Link}
         to={`/post/${post.id}`}
-        className="bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-shadow border border-gray-200"
-        radius="2xl"
+        className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-200"
+        radius="lg"
       >
         {/* Image: rounded on top only */}
         <div className="relative w-full h-48">
@@ -108,7 +108,10 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onUpvote, onBookmark }
               <Button
                 variant="light"
                 size="sm"
-                onClick={handleUpvote}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleUpvote(e);
+                }}
                 className={`hover:bg-secondary/10 ${upvoted ? "text-secondary" : "text-gray-500"}`}
               >
                 <Icon 

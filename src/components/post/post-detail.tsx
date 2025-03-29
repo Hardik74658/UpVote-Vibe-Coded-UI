@@ -48,7 +48,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
   };
 
   return (
-    <Card className="border border-primary/20 overflow-hidden rounded-3xl shadow-xl" radius="3xl">
+    <Card className="border border-primary/20 overflow-hidden rounded-lg shadow-xl" radius="lg">
       {/* Full width image with rounded top corners */}
       <div className="relative w-full h-[400px]">
         <img
@@ -93,7 +93,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
           <Button
             variant="light"
             startContent={<Icon icon={isLiked ? "lucide:heart" : "lucide:heart-off"} className="text-xl" />}
-            onPress={handleLike}
+            onPress={() => handleLike()}
             className={isLiked ? "text-secondary" : "text-gray-600"}
           >
             Like

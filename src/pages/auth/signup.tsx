@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent, ChangeEvent } from 'react';
 import { Card, CardBody, Input, Button } from '@nextui-org/react';
 import { Icon } from '@iconify/react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,10 +9,21 @@ export default function Signup() {
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
 
-  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert('Signed up with: ' + email);
     navigate('/login');
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (name === 'username') {
+      setUsername(value);
+    } else if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
   };
 
   return (
@@ -32,8 +43,9 @@ export default function Signup() {
             <Input 
               type="text" 
               label="Username" 
+              name="username"
               value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
+              onChange={handleInputChange} 
               variant="bordered" 
               radius="lg" 
               className="transition-colors duration-150 focus:ring-2 focus:ring-green-200"
@@ -41,8 +53,9 @@ export default function Signup() {
             <Input 
               type="email" 
               label="Email" 
+              name="email"
               value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
+              onChange={handleInputChange} 
               variant="bordered" 
               radius="lg" 
               className="transition-colors duration-150 focus:ring-2 focus:ring-green-200"
@@ -50,8 +63,9 @@ export default function Signup() {
             <Input 
               type="password" 
               label="Password" 
+              name="password"
               value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
+              onChange={handleInputChange} 
               variant="bordered" 
               radius="lg" 
               className="transition-colors duration-150 focus:ring-2 focus:ring-green-200"
